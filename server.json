@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/cn-mee-enforcement",
+  "title": "Cn Mee Enforcement",
+  "description": "cn-mee-enforcement -- environmental and nuclear-safety enforcement notices published by China's…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/cn-mee-enforcement",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-cn-mee-enforcement",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/cn-mee-enforcement/mcp"
+    }
+  ]
+}

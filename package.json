@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-cn-mee-enforcement",
+  "version": "0.1.0",
+  "description": "cn-mee-enforcement -- environmental and nuclear-safety enforcement notices published by China's Ministry of Ecology and Environment (生态环境部) on its exposure board (曝光台): administrative penalty decisions, enforcement information and circulars. Keyless; read live per call, nothing stored.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-cn-mee-enforcement": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "cn-mee-enforcement"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-cn-mee-enforcement.git"
+  },
+  "mcpName": "io.github.pipeworx-io/cn-mee-enforcement",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "cn-mee-enforcement",
+    "gatewaySlug": "cn-mee-enforcement",
+    "sourceHash": "v1-922fc9b8d8c8c06d872d730478b024fe80a28c74bd6e97b7b701ee511ff0131d",
+    "sourceCommit": "874331b0c46b151f9264bd14840631427a7721c1"
+  }
+}

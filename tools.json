@@ -1,0 +1,44 @@
+[
+  {
+    "name": "cn_mee_notices_list",
+    "description": "List China's Ministry of Ecology and Environment (生态环境部) published enforcement notices on its exposure board (曝光台): nuclear-safety and radiation administrative penalty decisions and correction orders against companies (stream penalties), enforcement information such as typical cases and environmental-incident investigation results naming the company responsible (stream enforcement), and circulars (stream notices). Answers which companies the Ministry has penalised or named, when, with the link to the official notice. FIRMS ONLY: decisions against individuals are omitted and counted. 15 rows per page, newest first; `query` (Chinese words such as a company name) matches titles on the page read only. No match says which page was read. Example: stream=penalties, page=2.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "stream": {
+          "type": "string",
+          "enum": [
+            "penalties",
+            "enforcement",
+            "notices"
+          ],
+          "description": "penalties (default): penalty and correction decisions. enforcement: typical cases and incident investigations. notices: circulars."
+        },
+        "query": {
+          "type": "string",
+          "description": "Chinese words matched in the titles of the page read: a company name or conduct (质量保证体系, 放射性). Optional."
+        },
+        "page": {
+          "type": "number",
+          "description": "Page number, 1 = newest (default 1). The response gives pages_total."
+        }
+      }
+    }
+  },
+  {
+    "name": "cn_mee_penalty_get",
+    "description": "Read one Ministry of Ecology and Environment (生态环境部) penalty or correction decision against a company: the party and its unified social credit code, document number and date, the facts found, the decision (fine amount, order to correct) and the legal provisions cited. Takes the `notice_url` of a penalties-stream row from cn_mee_notices_list. Decisions against individuals return found:false; the legal representative and sentences about people are left out and counted.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "notice_url": {
+          "type": "string",
+          "description": "Decision link as returned by cn_mee_notices_list (stream penalties)."
+        }
+      },
+      "required": [
+        "notice_url"
+      ]
+    }
+  }
+]
